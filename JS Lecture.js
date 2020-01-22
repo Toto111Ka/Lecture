@@ -192,20 +192,20 @@
 // circle[1].style.backgroundColor = 'yellow';
 // circle[2].style.backgroundColor = 'green';
 
-// // for (let i = 0; i < heart.length; i++) {
-// //     heart[i].style.backgroundColor = 'blue';
-// // }
+// for (let i = 0; i < heart.length; i++) {
+//     heart[i].style.backgroundColor = 'blue';
+// }
 
-// // heart.forEach(function(item, i, hearts){
-// //     item.style.backgroundColor = 'yellow';
-// // });
+// heart.forEach(function(item, i, hearts){
+//     item.style.backgroundColor = 'yellow';
+// });
 
 // let div = document.createElement('div');
 //     text = document.createTextNode('I was be here');
 
 // div.classList.add('black');
 
-// // document.body.appendChild(div);
+// document.body.appendChild(div);
 // // wrapper.appendChild(div);
 
 // // div.innerHTML = '<h1>Hello World!</h1>';
@@ -254,18 +254,118 @@
 // //     alert('dont touch me');
 // // });
 
-let box = document.querySelector('.box'),
-    btn = document.querySelector('.button');
+// let box = document.querySelector('.box'),
+//     btn = document.querySelector('.button');
 
-let width = box.scrollWidth,
-    height = box.scrollHeight;
+// let width = box.scrollWidth,
+//     height = box.scrollHeight;
 
-btn.addEventListener('click' , function(){
-    box.style.height = box.scrollHeight + 'px'; // cкрытие при нажание текста
-   // box.scrollTop = 0; // при клике возвращается в начало
-    console.log(box.scrollTop); // cкрытая часть нач сверху (пикселей)
-});
+// btn.addEventListener('click' , function(){
+//     box.style.height = box.scrollHeight + 'px'; // cкрытие при нажание текста
+//    // box.scrollTop = 0; // при клике возвращается в начало
+//     console.log(box.scrollTop); // cкрытая часть нач сверху (пикселей)
+// });
 
-console.log(box.getBoundingClientRect()); // метод вывод координат
-// Для получения конкретного элемента (.cвойство)
-// console.log(document.documentElement.свойство)
+// console.log(box.getBoundingClientRect()); // метод вывод координат
+// // Для получения конкретного элемента (.cвойство)
+// // console.log(document.documentElement.свойство)
+
+//// конструктор Шаблонов ЕС5
+// function User(name,id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hello = function(){
+//         console.log('Hello! ' + this.name);
+//     };
+// }
+
+// User.prototype.exit = function(name) {
+//     console.log('User ' + this.name + ' Exit');
+// }
+
+// let Ivan = new User('Ivan', 25);
+//     Alex = new User('Alex', 20);
+
+// console.log(Ivan);
+
+// Ivan.exit();
+
+// // конструктор Шаблонов ЕС6
+// class User {
+//     constructor(name, id){
+//         this.name = name;
+//         this.id = id;
+//         this.human = true;
+//     }
+//     hello() {
+//         console.log('Hello! ${this.name}')
+//     }
+//     exit() {
+//     console.log('User ${this.name} exit')
+//     }
+// }
+// let Ivan = new User('Ivan', 25);
+// let Alex = new User('Alex', 20);
+
+// console.log(Ivan);
+
+// Ivan.exit();
+
+// 1) Вызов функции - виндову/Андефайнд
+// function showThis(a, b) {
+//     console.log(this);
+//         function sum() {
+//             console.log(this);
+//             return a + b;
+//         }
+//     console.log(sum());
+// }
+// showThis(4, 5);
+
+// 2) Метод обьекта - this = обьект
+
+// let obj = {
+//     a: 20,
+//     b: 25,
+//     sum: function() {
+//         console.log(this);
+//     }
+// };
+
+// obj.sum();
+
+// 3) Конструктор (New) - this = новый созданый обьект (смотри выше)
+
+// 4) Указание конкретного контекста - call, applay, bind
+
+// let user = {
+//   name: "John"  
+// };
+
+// function sayName(surname) {
+//     console.log(this);
+//     console.log(this.name + surname);
+// }
+// console.log(sayName.call(user, 'Smith'));
+// console.log(sayName.apply(user, ['Snow']));
+
+// function count(nunmer){
+//     return this * nunmer;
+// }
+
+// let double = count.bind(2);
+
+// console.log(double(3));
+// console.log(double(10));
+
+// let btn = document.querySelectorAll('button')[0];
+
+// btn.addEventListener('click', function(){
+//     console.log(this);
+//     this.style.backgroundColor = 'red';
+//     function showThis() {
+//         console.log(this);
+//     }
+//     showThis();
+// });
