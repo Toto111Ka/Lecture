@@ -369,3 +369,83 @@
 //     }
 //     showThis();
 // });
+
+//промисы 
+
+//Колбек без промисов
+
+// let drink = 0;
+
+// function shoot(arrow, headshot, fail){
+//     console.log('You shot up');
+
+//     setTimeout(function(){
+//         Math.random() > .5 ? headshot({}) : fail("you miss");
+//     }, 3000)
+// };
+
+// function win() {
+//     console.log('you WIN!');
+//     (drink == 1) ? buyBeer() : giveMonye();
+// }
+
+// function buyBeer(){
+//     console.log('You got a beer!');
+// }
+
+// function giveMonye(){
+//     console.log('You got monye!');
+// }
+
+// function loose() {
+//     console.log('you LOSER!')
+// }
+
+// shoot({}, 
+//     function(mark) {
+//         console.log('You hit in target!');
+//         win(mark, buyBeer, giveMonye);
+//     }, function(miss){
+//         console.error(miss);
+//         loose();
+//     }
+// )
+
+// с промисами
+
+let drink = 0;
+
+function shoot(arrow) {
+    console.log('You shot up');
+
+    let promise = new Promise(function(resolve, reject) { //Резолф обещание тру реджект фолс;
+        setTimeout(function(){
+            Math.random() > .5 ? resolve({}) : reject("you miss");
+        }, 3000);
+    });
+    
+    return promise;
+
+};
+
+function win() {
+    console.log('you WIN!');
+    (drink == 1) ? buyBeer() : giveMonye();
+}
+
+function buyBeer(){
+    console.log('You got a beer!');
+}
+
+function giveMonye(){
+    console.log('You got monye!');
+}
+
+function loose() {
+    console.log('you LOSER!');
+}
+
+shoot({})
+        .then(mark => console.log('You hit in target!'))
+        .then(win)    //для ресолв
+        .catch(loose) //для реджект
