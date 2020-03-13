@@ -413,39 +413,115 @@
 
 // с промисами
 
-let drink = 0;
+// let drink = 0;
 
-function shoot(arrow) {
-    console.log('You shot up');
+// function shoot(arrow) {
+//     console.log('You shot up');
 
-    let promise = new Promise(function(resolve, reject) { //Резолф обещание тру реджект фолс;
-        setTimeout(function(){
-            Math.random() > .5 ? resolve({}) : reject("you miss");
-        }, 3000);
-    });
+//     let promise = new Promise(function(resolve, reject) { //Резолф обещание тру реджект фолс;
+//         setTimeout(function(){
+//             Math.random() > .5 ? resolve({}) : reject("you miss");
+//         }, 3000);
+//     });
     
-    return promise;
+//     return promise;
 
-};
+// };
 
-function win() {
-    console.log('you WIN!');
-    (drink == 1) ? buyBeer() : giveMonye();
-}
+// function win() {
+//     console.log('you WIN!');
+//     (drink == 1) ? buyBeer() : giveMonye();
+// }
 
-function buyBeer(){
-    console.log('You got a beer!');
-}
+// function buyBeer(){
+//     console.log('You got a beer!');
+// }
 
-function giveMonye(){
-    console.log('You got monye!');
-}
+// function giveMonye(){
+//     console.log('You got monye!');
+// }
 
-function loose() {
-    console.log('you LOSER!');
-}
+// function loose() {
+//     console.log('you LOSER!');
+// }
 
-shoot({})
-        .then(mark => console.log('You hit in target!'))
-        .then(win)    //для ресолв
-        .catch(loose) //для реджект
+// shoot({})
+//         .then(mark => console.log('You hit in target!'))
+//         .then(win)    //для ресолв
+//         .catch(loose) //для реджект
+
+// Внутренная Память (на странице)
+
+// localStorage.setItem("number", 1); // запись ключей 
+
+// console.log(localStorage.getItem("number")); // получение значение ключа
+
+// localStorage.removeItem("number"); // удаление ключа 
+
+// localStorage.clear(); // очистка всего хранилища
+
+// window.addEventListener("DOMContentLoaded", function(){
+
+//     let checkBox = document.getElementById('rememberMe'),
+//         change = document.getElementById('chenge'),
+//         form = getElementsByTagName("form")[0];
+
+//     if(localStorage.getItem("isChecked") === "true") { //Тру в строке потому запись происходить в строке (Локальная история)
+//         checkBox.checked = true;
+//     }
+//     if(localStorage.getItem("bg") === "changed") {
+//         form.style.backgroundColor = "#FF4766";
+//     }
+
+//     checkBox.addEventListener('click', function(){
+//         localStorage.setItem("isChecked", true);
+//     });
+
+//     change.addEventListener('click', function(){
+//         localStorage.setItem('bg', 'changed');
+//     });
+
+//     let persone = {
+//         name: "Alex",
+//         age: 25,
+//         tech: ['mobile', 'netbook']
+//     }
+
+//     let serializedPersone = JSON.stringify(persone); // перевод в Жсон формат
+//     localStorage.setItem("Alex", serializedPersone);
+
+//     console.log(JSON.parse(localStorage.getItem("Alex"))); // передача данных обектов из Локальной истори
+// });
+
+// Ошибки
+
+//Трай Кетч для перехвата ошибок
+
+// try {
+//     cpnsole.log('Normal')
+// } catch {
+//     console.log('error')
+// }
+
+// console.log(error.name); //имя ошибки
+// console.log(error.massage); //описание ошибки
+// console.log(error.stack); // набор вызовов
+
+
+//создание ошибок
+
+// let json = '{"id":2}'
+
+// try {
+//     let user = JSON.parse(json);
+//     cpnsole.log(user);
+
+//     if(!user.name){
+//         trow new Error("В этих данных нет имени");
+//     }
+
+// } catch {
+//     console.log('error');
+// } finally {
+//     console.log('я выполнюсь всегда')
+// }
