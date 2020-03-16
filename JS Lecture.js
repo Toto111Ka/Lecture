@@ -525,3 +525,43 @@
 // } finally {
 //     console.log('я выполнюсь всегда')
 // }
+//       Jquery
+
+// $(document).ready(function(){ //замена доп контент лоадед на реди
+//     $('.button:first').hover(function() {
+//         $(this).toggleClass('activ');
+//     });
+        
+//     $('.button:eq(2)').on('click', function() {
+//         $('.heart:even').fadeToggle('slow');
+//     }); 
+
+//     $('.button:eq(3)').on('click', function() {
+//         $('.circle:odd').animate(
+//             {
+//                 opacity: 'toggle',
+//                 height: 'toggle,'
+//             }, 3000
+//         );
+//     });
+// });
+
+//        Angular
+
+// 1. NodeJs -> npm пакеты
+// 2. TypeScript
+// 3. WebPack
+// 4. MVC (Modal View Controler)
+// 5. Angular
+
+//        React
+// 1. NodeJs -> npm пакеты
+// 2. Babel (софт переписывющий ЕС6 в ЕС5)
+// 3. JSX
+// 4. React
+// 5. WebPack
+
+//        Vue
+// 1. NodeJs -> npm пакеты
+// 2. Babel
+// 3. WebPack
